@@ -1,8 +1,11 @@
+import { useState } from "react"
 import Formulario from "./components/Formulario"
 import Header from "./components/Header"
 import ListadoTareas from "./components/ListadoTareas"
 
 function App() {
+
+    const [ tareas, setTareas ] = useState([])
 
   return (
     <>
@@ -10,7 +13,10 @@ function App() {
         <Header />
 
         <div className="mt-12 md:flex">
-          <Formulario />
+          <Formulario 
+            tareas={tareas}
+            setTareas={ setTareas}
+          />
           <ListadoTareas />
         </div>
 
